@@ -1,11 +1,8 @@
-from google_images_download import google_images_download  as gi #importing the library
+from google_images_download import google_images_download
 
-response = google_images_download.googleimagesdownload()   #class instantiation
+response = google_images_download.googleimagesdownload()
 
-arguments = {"keywords":"Mariano Rajoy","limit":1,"print_urls":True}   #creating list of arguments
-paths = response.download(arguments)   #passing the arguments to the function
-print(paths)   #printing absolute paths of the downloaded images
+f = open('/home/jonander/PycharmProjects/ScriptGoogleImagesDownloader/nombres.txt','r')
 
-if __name__ == '__main__':
-    paths = response.download(arguments)  # passing the arguments to the function
-    print(paths)  # printing absolute paths of the downloaded images
+arguments = {"keywords":'alexelcapo',"limit":1,"print_urls":True}
+paths = response.download(arguments)
