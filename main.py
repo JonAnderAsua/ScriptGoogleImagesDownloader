@@ -2,7 +2,8 @@ from google_images_download import google_images_download
 
 response = google_images_download.googleimagesdownload()
 
-f = open('/home/jonander/PycharmProjects/ScriptGoogleImagesDownloader/nombres.txt','r')
+f = open('./nombres.txt','r',encoding='utf-8')
 
-arguments = {"keywords":'alexelcapo',"limit":1,"print_urls":True}
-paths = response.download(arguments)
+for linea in f:
+    arguments = {"keywords":linea,"limit":1,"print_urls":True}
+    paths = response.download(arguments)
