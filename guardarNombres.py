@@ -12,7 +12,10 @@ with open("/home/jonander/PycharmProjects/TFG-KG-RelacionesClientelares/data/lad
 f = open("/home/jonander/PycharmProjects/ScriptGoogleImagesDownloader/nombres.txt",'w')
 
 for i in pertsonak['persons']:
-    f.write(i['title'] + '\n')
+    try:
+        f.write(i['names'][0] + '\n')
+    except:
+        f.write(i['title'] + '\n')
 
 for j in entitateak['entities']:
     f.write(j['title'] + '\n')
